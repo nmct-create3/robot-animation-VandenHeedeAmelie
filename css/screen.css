@@ -15,6 +15,7 @@
   --global-html-color: var(--global-color-front);
   --global-html-backgroundColor: var(--global-color-back);
   --global-selection-backgroundColor: var(--global-color-front);
+  --global-play-state: running;
 }
 
 /*------------------------------------*\
@@ -34,6 +35,7 @@ html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--global-html-backgroundColor);
 }
 
 *,
@@ -43,6 +45,13 @@ html {
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  /* gap: 2rem; */
+  min-height: 100vh;
+  /* padding: 2rem; */
 }
 
 /*
@@ -133,9 +142,44 @@ body {
 */
 
 .c-robot {
+  fill: var(--global-color-front);
+  max-width: 18.75rem;
+
+}
+
+.c-robot__volledig{
+  animation: robotvlieg 0.75s ease-in-out infinite alternate;
+  animation-play-state: var(--global-play-state);
 }
 
 .c-robot__shadow {
+  fill: #000;
+  opacity: 0.2;
+  animation: schaduw 0.75s ease-in-out infinite alternate;
+  animation-play-state: var(--global-play-state);
+  transform-origin: 50% 100%;
+}
+
+
+@keyframes robotvlieg{
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4%);
+  }
+}
+
+@keyframes schaduw{
+  100%{
+    transform: scale(0.75);
+    opacity: 0.1;
+  }
+}
+
+
+body:has(input:checked) .c-robot{
+  --global-play-state : paused;
 }
 
 
