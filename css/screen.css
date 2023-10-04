@@ -148,19 +148,19 @@ body {
 }
 
 .c-robot__volledig{
-  animation: robotvlieg 0.75s ease-in-out infinite alternate;
-  animation-play-state: var(--global-play-state);
+  /* animation: robotvlieg 0.75s ease-in-out infinite alternate;
+  animation-play-state: var(--global-play-state); */
 }
 
 .c-robot__shadow {
   fill: #000;
   opacity: 0.2;
-  animation: schaduw 0.75s ease-in-out infinite alternate;
+  /* animation: schaduw 0.75s ease-in-out infinite alternate;
   animation-play-state: var(--global-play-state);
-  transform-origin: 50% 100%;
+  transform-origin: 50% 100%; */
 }
 
-@keyframes robotvlieg{
+/* @keyframes robotvlieg{
   0% {
     transform: translateY(0);
   }
@@ -178,8 +178,17 @@ body {
 
 body:has(input:checked) .c-robot{
   --global-play-state : paused;
-}
+} */
 
+
+/* .c-robot--css-anim #Schaduw{
+  transform-origin: 50% 100%;
+  animation-name: shadowPulse;
+  animation-duration: 0.75;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+} */
 
 
 /*
