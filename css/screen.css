@@ -160,7 +160,6 @@ body {
   transform-origin: 50% 100%;
 }
 
-
 @keyframes robotvlieg{
   0% {
     transform: translateY(0);
@@ -177,10 +176,10 @@ body {
   }
 }
 
-
 body:has(input:checked) .c-robot{
   --global-play-state : paused;
 }
+
 
 
 /*
